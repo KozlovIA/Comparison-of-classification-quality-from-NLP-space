@@ -1,0 +1,46 @@
+parameters = {
+    'penalty': ('l1', 'l2', 'elasticnet', None),
+    'C': (1, 50, 100, 500, 1000),
+    'max_iter': (80, 100, 200, 500),
+    'solver': ('newton-cg', 'lbfgs', 'liblinear', 'sag', 'saga'),
+    'class_weight': ('balanced', None),
+    'multi_class': ('multinomial', 'ovr')
+}
+clf = LogisticRegression(random_state=0)
+
+parameters = {
+    'n_neighbors': (1, 5, 10, 50, 100),
+    'weights': ('uniform', 'distance'),
+    'algorithm': ('brute', 'kd_tree', 'ball_tree'),
+    'p': (1, 2, 3, 5, 10),
+    'metric': ('euclidean', 'manhattan', 'minkowski', 'cosine', 'chebyshev', 'mahalanobis', 'seuclidean')
+}
+clf = KNeighborsClassifier()
+
+
+parameters = {
+    'criterion': ('gini', 'log_loss', 'entropy'),
+    'splitter': ('best', 'random'),
+    'max_depth': (1, 10, 100, None),
+    'min_samples_split': (2, 5, 10),
+    'min_samples_leaf':  (1, 2, 5, 10),
+    'max_features': (0.3, 0.5, 50, "sqrt", "log2", None),
+    'random_state': (0,)
+}
+
+clf = DecisionTreeClassifier()
+
+
+parameters = {
+    'n_estimators': (50, 100, 300, 500, 1000),
+    'criterion': ('gini', 'log_loss', 'entropy'),
+    'oob_score': (True, False),
+    'bootstrap': (True, False),
+    'max_depth': (1, 10, 100, None),
+    'min_samples_split': (2, 5, 10),
+    'min_samples_leaf':  (1, 2, 5, 10),
+    'max_features': (0.3, 0.5, 100, "sqrt", "log2", None),
+    'random_state': (0,)
+}
+
+clf = RandomForestClassifier(random_state=0)

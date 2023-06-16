@@ -53,6 +53,7 @@ def lemmatize(texts):
     """
     res = list()
     for text in texts:
+        text = str(text)
         text = text.lower()
         nltk_tokens = word_tokenize(text) # разбиваем текст на слова
         line = ''

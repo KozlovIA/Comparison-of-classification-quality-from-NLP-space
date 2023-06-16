@@ -9,38 +9,38 @@ parameters = {
 clf = LogisticRegression(random_state=0)
 
 parameters = {
-    'n_neighbors': (1, 5, 10, 50, 100),
+    'n_neighbors': (5, 10, 50, 100),
+    'metric': ('euclidean', 'manhattan', 'minkowski', 'cosine', 'chebyshev', 'mahalanobis', 'seuclidean'),
+    'p': (1, 2, 3, 5, 10),
     'weights': ('uniform', 'distance'),
     'algorithm': ('brute', 'kd_tree', 'ball_tree'),
-    'p': (1, 2, 3, 5, 10),
-    'metric': ('euclidean', 'manhattan', 'minkowski', 'cosine', 'chebyshev', 'mahalanobis', 'seuclidean')
 }
 clf = KNeighborsClassifier()
 
 
 parameters = {
     'criterion': ('gini', 'log_loss', 'entropy'),
+    'max_features': (0.1, 0.3, 0.5, 50, "sqrt", "log2", None),
+    'max_depth': (10, 50, 100, None),
     'splitter': ('best', 'random'),
-    'max_depth': (1, 10, 100, None),
+    'max_leaf_nodes': (100, 1000, 25000, None),
     'min_samples_split': (2, 5, 10),
     'min_samples_leaf':  (1, 2, 5, 10),
-    'max_features': (0.3, 0.5, 50, "sqrt", "log2", None),
-    'random_state': (0,)
 }
 
-clf = DecisionTreeClassifier()
+clf = DecisionTreeClassifier(random_state=0)
 
 
 parameters = {
     'n_estimators': (50, 100, 300, 500, 1000),
+    'max_depth': (10, 100, 200, None),
     'criterion': ('gini', 'log_loss', 'entropy'),
-    'oob_score': (True, False),
-    'bootstrap': (True, False),
-    'max_depth': (1, 10, 100, None),
+    'max_features': (0.3, 0.5, 100, "sqrt", "log2", None),
+    'max_leaf_nodes': (100, 1000, 25000, None),
     'min_samples_split': (2, 5, 10),
     'min_samples_leaf':  (1, 2, 5, 10),
-    'max_features': (0.3, 0.5, 100, "sqrt", "log2", None),
-    'random_state': (0,)
+    'oob_score': (True, False),
+    'bootstrap': (True, False),
 }
 
 clf = RandomForestClassifier(random_state=0)
